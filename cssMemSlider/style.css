@@ -1,0 +1,13 @@
+
+.wrapper {
+    position: relative;
+    text-align: center;
+    margin: 0 auto; 
+}
+.slider {
+    
+}
+.slider img {
+    width: 20%;
+    float: left;
+}
