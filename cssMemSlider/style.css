@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 .css-slider {
-	position: relative;	
+	position: relative;		
 }
 .css-slider__input {
 	display: none;
@@ -10,8 +10,9 @@
 .css-slider__wrapper {
 	position: relative;
 	overflow: hidden;
-	width: 100%;
-	
+	max-width: 50em;	
+	width: 95vw;
+	margin: 1em auto;	
 }
 .css-slider__wrapper .css-slider__slides {
 	display: flex;
@@ -35,6 +36,7 @@
  }
  .css-slider__slide {
 	width: calc(100% / 4);
+	
  }
  
  .css-slider__slide img {
@@ -43,36 +45,68 @@
 	max-width: 100%;
 	height: auto;
  }
- .css-slider__labels {
+ .css-slider__controls {
+	width: 95vw;
+	max-width: 50em;
+	margin: 1em auto;
+ }
+ .css-slider__labels {	
+	font-weight: 600;
+ }
+ .css-slider__labels > label{
 	
-	transition: all 0.5s ease-out;
+	transition: all 2s ease-out;
 
  }
 .css-slider__buttons {
 	float: right;
 }
-#slide1:checked ~ div .css-slider__buttons .css-slider__btn:nth-child(1),
-#slide2:checked ~ div .css-slider__buttons .css-slider__btn:nth-child(2),
-#slide3:checked ~ div .css-slider__buttons .css-slider__btn:nth-child(3),
-#slide4:checked ~ div .css-slider__buttons .css-slider__btn:nth-child(4) {
-  background: red;
+#slide1:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(1),
+#slide2:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(2),
+#slide3:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(3),
+#slide4:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(4) {
+	border-color: white;
+	background: rgb(55, 0, 255);
+  
 }
 .css-slider__btn {
-	width: 9px;
-  height: 9px;
-  border-radius: 5px;
-  background: gray;
-  display: inline-block !important;
-  margin: 0 1px;
-  cursor: pointer;
+	font-size: 0;
+	padding: auto;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
+	background: gray;
+	border: 0.5rem solid transparent;
+	display: inline-block;
+	background-clip:padding-box;
+	cursor: pointer;
+	transition: transform 2s;	
 }
-#slide1:checked ~ .css-slider__labels label:nth-child(1),
-#slide2:checked ~ .css-slider__labels label:nth-child(2),
-#slide3:checked ~ .css-slider__labels label:nth-child(3),
-#slide4:checked ~ .css-slider__labels label:nth-child(4) {
+.css-slider__btn:hover {
+	background-color: aqua;
+}
+.css-slider__btn:active {
+	background-color: red;
+}
+
+#slide1:checked ~ .css-slider__controls .css-slider__labels label:nth-child(1),
+#slide2:checked ~ .css-slider__controls .css-slider__labels label:nth-child(2),
+#slide3:checked ~ .css-slider__controls .css-slider__labels label:nth-child(3),
+#slide4:checked ~ .css-slider__controls .css-slider__labels label:nth-child(4) {
    opacity: 1;
 }
 .css-slider__labels > label {
 	opacity: 0;
     position: absolute;
+}
+@media (max-width: 414px){
+	.css-slider__controls {
+		display:flex;
+	}
+	.css-slider__buttons {
+		margin: 0 auto;
+	}
+	.css-slider__labels {
+		padding-top: 4em;
+	}
 }
