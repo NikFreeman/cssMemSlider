@@ -1,0 +1,112 @@
+* {
+	box-sizing: border-box;
+}
+.css-slider {
+	position: relative;		
+}
+.css-slider__input {
+	display: none;
+}
+.css-slider__wrapper {
+	position: relative;
+	overflow: hidden;
+	max-width: 50em;	
+	width: 95vw;
+	margin: 1em auto;	
+}
+.css-slider__wrapper .css-slider__slides {
+	display: flex;
+	padding: 0; 
+	width: 400%; 
+	line-height: 0; 
+	transition: all 800ms cubic-bezier(.770,.000,.175,1.000);
+ }
+ #slide1:checked ~ .css-slider__wrapper .css-slider__slides {
+	margin-left: 0;
+ }
+ 
+ #slide2:checked ~ .css-slider__wrapper .css-slider__slides {
+	margin-left: -100%; 
+ }
+ #slide3:checked ~ .css-slider__wrapper .css-slider__slides {
+	margin-left: -200%; 
+ }
+ #slide4:checked ~ .css-slider__wrapper .css-slider__slides {
+	margin-left: -300%; 
+ }
+ .css-slider__slide {
+	width: calc(100% / 4);
+	
+ }
+ 
+ .css-slider__slide img {
+	display: block; 
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+ }
+ .css-slider__controls {
+	width: 95vw;
+	max-width: 50em;
+	margin: 1em auto;
+ }
+ .css-slider__labels {	
+	font-weight: 600;
+ }
+ .css-slider__labels > label{
+	
+	transition: all 2s ease-out;
+
+ }
+.css-slider__buttons {
+	float: right;
+}
+#slide1:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(1),
+#slide2:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(2),
+#slide3:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(3),
+#slide4:checked ~ .css-slider__controls .css-slider__buttons .css-slider__btn:nth-child(4) {
+	border-color: white;
+	background: rgb(55, 0, 255);
+  
+}
+.css-slider__btn {
+	font-size: 0;
+	padding: auto;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
+	background: gray;
+	border: 0.5rem solid transparent;
+	display: inline-block;
+	background-clip:padding-box;
+	cursor: pointer;
+	transition: transform 2s;	
+}
+.css-slider__btn:hover {
+	background-color: aqua;
+}
+.css-slider__btn:active {
+	background-color: red;
+}
+
+#slide1:checked ~ .css-slider__controls .css-slider__labels label:nth-child(1),
+#slide2:checked ~ .css-slider__controls .css-slider__labels label:nth-child(2),
+#slide3:checked ~ .css-slider__controls .css-slider__labels label:nth-child(3),
+#slide4:checked ~ .css-slider__controls .css-slider__labels label:nth-child(4) {
+   opacity: 1;
+}
+.css-slider__labels > label {
+	opacity: 0;
+    position: absolute;
+}
+@media (max-width: 414px){
+	.css-slider__controls {
+		display:flex;
+	}
+	.css-slider__buttons {
+		margin: 0 auto;
+	}
+	.css-slider__labels {
+		padding-top: 4em;
+	}
+}
